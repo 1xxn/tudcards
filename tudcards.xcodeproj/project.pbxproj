@@ -8,17 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		236E19BB2A618450000A0B3B /* tudcardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19BA2A618450000A0B3B /* tudcardsApp.swift */; };
-		236E19BD2A618450000A0B3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19BC2A618450000A0B3B /* ContentView.swift */; };
 		236E19BF2A618451000A0B3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236E19BE2A618451000A0B3B /* Assets.xcassets */; };
 		236E19C22A618451000A0B3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236E19C12A618451000A0B3B /* Preview Assets.xcassets */; };
+		236E19C92A6184C6000A0B3B /* FlashcardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19C82A6184C6000A0B3B /* FlashcardModel.swift */; };
+		236E19CB2A618553000A0B3B /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19CA2A618553000A0B3B /* CategoryViewModel.swift */; };
+		236E19CD2A618646000A0B3B /* FlashcardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19CC2A618646000A0B3B /* FlashcardViewModel.swift */; };
+		236E19D32A618B31000A0B3B /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19D22A618B31000A0B3B /* CategoryListView.swift */; };
+		236E19D52A618C8C000A0B3B /* FlashcardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19D42A618C8C000A0B3B /* FlashcardListView.swift */; };
+		236E19D72A618E51000A0B3B /* FlashcardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19D62A618E51000A0B3B /* FlashcardDetailView.swift */; };
+		236E19D92A618F55000A0B3B /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19D82A618F55000A0B3B /* OverlayView.swift */; };
+		23FD36B52A620D0D0005FE14 /* CoredataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23FD36B32A620D0D0005FE14 /* CoredataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		236E19B72A618450000A0B3B /* tudcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tudcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		236E19BA2A618450000A0B3B /* tudcardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tudcardsApp.swift; sourceTree = "<group>"; };
-		236E19BC2A618450000A0B3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		236E19BE2A618451000A0B3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		236E19C12A618451000A0B3B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		236E19C82A6184C6000A0B3B /* FlashcardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardModel.swift; sourceTree = "<group>"; };
+		236E19CA2A618553000A0B3B /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		236E19CC2A618646000A0B3B /* FlashcardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewModel.swift; sourceTree = "<group>"; };
+		236E19D22A618B31000A0B3B /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		236E19D42A618C8C000A0B3B /* FlashcardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardListView.swift; sourceTree = "<group>"; };
+		236E19D62A618E51000A0B3B /* FlashcardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardDetailView.swift; sourceTree = "<group>"; };
+		236E19D82A618F55000A0B3B /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		23FD36B42A620D0D0005FE14 /* CoredataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoredataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +65,12 @@
 		236E19B92A618450000A0B3B /* tudcards */ = {
 			isa = PBXGroup;
 			children = (
-				236E19BA2A618450000A0B3B /* tudcardsApp.swift */,
-				236E19BC2A618450000A0B3B /* ContentView.swift */,
-				236E19BE2A618451000A0B3B /* Assets.xcassets */,
 				236E19C02A618451000A0B3B /* Preview Content */,
+				236E19D12A618873000A0B3B /* Supporting Files */,
+				236E19D02A618862000A0B3B /* Views */,
+				236E19CF2A618851000A0B3B /* ViewModels */,
+				236E19CE2A618845000A0B3B /* Models */,
+				23FD36B32A620D0D0005FE14 /* CoredataModel.xcdatamodeld */,
 			);
 			path = tudcards;
 			sourceTree = "<group>";
@@ -65,6 +81,43 @@
 				236E19C12A618451000A0B3B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		236E19CE2A618845000A0B3B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				236E19C82A6184C6000A0B3B /* FlashcardModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		236E19CF2A618851000A0B3B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				236E19CC2A618646000A0B3B /* FlashcardViewModel.swift */,
+				236E19CA2A618553000A0B3B /* CategoryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		236E19D02A618862000A0B3B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				236E19BA2A618450000A0B3B /* tudcardsApp.swift */,
+				236E19D22A618B31000A0B3B /* CategoryListView.swift */,
+				236E19D42A618C8C000A0B3B /* FlashcardListView.swift */,
+				236E19D62A618E51000A0B3B /* FlashcardDetailView.swift */,
+				236E19D82A618F55000A0B3B /* OverlayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		236E19D12A618873000A0B3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				236E19BE2A618451000A0B3B /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +190,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				236E19BD2A618450000A0B3B /* ContentView.swift in Sources */,
+				236E19D92A618F55000A0B3B /* OverlayView.swift in Sources */,
+				236E19D52A618C8C000A0B3B /* FlashcardListView.swift in Sources */,
+				236E19D32A618B31000A0B3B /* CategoryListView.swift in Sources */,
+				236E19D72A618E51000A0B3B /* FlashcardDetailView.swift in Sources */,
+				236E19CD2A618646000A0B3B /* FlashcardViewModel.swift in Sources */,
+				236E19CB2A618553000A0B3B /* CategoryViewModel.swift in Sources */,
+				236E19C92A6184C6000A0B3B /* FlashcardModel.swift in Sources */,
 				236E19BB2A618450000A0B3B /* tudcardsApp.swift in Sources */,
+				23FD36B52A620D0D0005FE14 /* CoredataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +399,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		23FD36B32A620D0D0005FE14 /* CoredataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				23FD36B42A620D0D0005FE14 /* CoredataModel.xcdatamodel */,
+			);
+			currentVersion = 23FD36B42A620D0D0005FE14 /* CoredataModel.xcdatamodel */;
+			path = CoredataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 236E19AF2A618450000A0B3B /* Project object */;
 }

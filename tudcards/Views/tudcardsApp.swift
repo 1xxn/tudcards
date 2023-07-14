@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct tudcardsApp: App {
+    @StateObject private var categoryViewModel = CategoryViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CategoryListView()
+                .environmentObject(categoryViewModel)
         }
     }
 }
