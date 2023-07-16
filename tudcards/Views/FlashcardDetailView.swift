@@ -32,7 +32,9 @@ struct FlashcardDetailView: View {
             }
             .padding()
             .matchedGeometryEffect(id: flashcard.id, in: cardNamespace)
-
+            .rotation3DEffect(.degrees(isShowingAnswer ? 180 : 0), axis: (x: 0, y: 1, z: 0))
+            .animation(.default)
+            
             Button(action: {
                 withAnimation {
                     isShowingAnswer.toggle()
@@ -48,8 +50,6 @@ struct FlashcardDetailView: View {
         }
         .navigationTitle("Flashcard")
         .padding()
-        .rotation3DEffect(.degrees(isShowingAnswer ? 180 : 0), axis: (x: 0, y: 1, z: 0))
-        .animation(.default) // Apply animation to the rotation
 
     }
 }

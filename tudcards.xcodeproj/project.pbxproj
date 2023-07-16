@@ -17,7 +17,6 @@
 		236E19D52A618C8C000A0B3B /* FlashcardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19D42A618C8C000A0B3B /* FlashcardListView.swift */; };
 		236E19D72A618E51000A0B3B /* FlashcardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19D62A618E51000A0B3B /* FlashcardDetailView.swift */; };
 		236E19D92A618F55000A0B3B /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19D82A618F55000A0B3B /* OverlayView.swift */; };
-		23FD36B52A620D0D0005FE14 /* CoredataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23FD36B32A620D0D0005FE14 /* CoredataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +31,6 @@
 		236E19D42A618C8C000A0B3B /* FlashcardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardListView.swift; sourceTree = "<group>"; };
 		236E19D62A618E51000A0B3B /* FlashcardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardDetailView.swift; sourceTree = "<group>"; };
 		236E19D82A618F55000A0B3B /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
-		23FD36B42A620D0D0005FE14 /* CoredataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoredataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +68,6 @@
 				236E19D02A618862000A0B3B /* Views */,
 				236E19CF2A618851000A0B3B /* ViewModels */,
 				236E19CE2A618845000A0B3B /* Models */,
-				23FD36B32A620D0D0005FE14 /* CoredataModel.xcdatamodeld */,
 			);
 			path = tudcards;
 			sourceTree = "<group>";
@@ -198,7 +195,6 @@
 				236E19CB2A618553000A0B3B /* CategoryViewModel.swift in Sources */,
 				236E19C92A6184C6000A0B3B /* FlashcardModel.swift in Sources */,
 				236E19BB2A618450000A0B3B /* tudcardsApp.swift in Sources */,
-				23FD36B52A620D0D0005FE14 /* CoredataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,19 +395,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		23FD36B32A620D0D0005FE14 /* CoredataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				23FD36B42A620D0D0005FE14 /* CoredataModel.xcdatamodel */,
-			);
-			currentVersion = 23FD36B42A620D0D0005FE14 /* CoredataModel.xcdatamodel */;
-			path = CoredataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 236E19AF2A618450000A0B3B /* Project object */;
 }

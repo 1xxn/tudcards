@@ -8,7 +8,7 @@
 import Foundation
 
 // define the category with id, title, module and flashcard
-struct Category: Identifiable {
+struct Category: Identifiable, Codable {
     let id: UUID
     var title: String
     var module: String
@@ -16,7 +16,7 @@ struct Category: Identifiable {
 }
 
 // define flashcard with id, question and answer
-struct Flashcard: Identifiable {
+struct Flashcard: Identifiable, Codable {
     let id: UUID
     var question: String
     var answer: String

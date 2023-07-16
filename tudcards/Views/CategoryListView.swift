@@ -33,6 +33,7 @@ struct CategoryListView: View {
                         // Show a sheet or navigate to a view to create a new category
                     }) {
                         Image(systemName: "plus")
+                            .foregroundColor(.green)
                     }
                 }
             }
@@ -72,6 +73,7 @@ struct CategorySheet: View {
                         isPresented = false
                     }) {
                         Text("Cancel")
+                            .foregroundColor(.red)
                     }
                 }
             }
