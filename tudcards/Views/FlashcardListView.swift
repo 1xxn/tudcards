@@ -40,6 +40,7 @@ struct FlashcardListView: View {
                     // Show a sheet or navigate to a view to create a new flashcard
                 }) {
                     Image(systemName: "plus")
+                        .foregroundColor(.green)
                 }
             }
         }
@@ -85,6 +86,7 @@ struct FlashcardSheet: View {
                         isPresented = false
                     }) {
                         Text("Cancel")
+                            .foregroundColor(.red)
                     }
                 }
             }

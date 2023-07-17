@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		233F575A2A6492A40077EED0 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233F57592A6492A40077EED0 /* ChatView.swift */; };
+		233F575C2A6493CA0077EED0 /* OpenAIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233F575B2A6493CA0077EED0 /* OpenAIModel.swift */; };
+		233F575F2A6553360077EED0 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 233F575E2A6553360077EED0 /* OpenAISwift */; };
+		233F57622A6556000077EED0 /* ChatGPT in Frameworks */ = {isa = PBXBuildFile; productRef = 233F57612A6556000077EED0 /* ChatGPT */; };
+		233F57642A6556000077EED0 /* GPT in Frameworks */ = {isa = PBXBuildFile; productRef = 233F57632A6556000077EED0 /* GPT */; };
+		233F57662A6556000077EED0 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 233F57652A6556000077EED0 /* OpenAI */; };
 		236E19BB2A618450000A0B3B /* tudcardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19BA2A618450000A0B3B /* tudcardsApp.swift */; };
 		236E19BF2A618451000A0B3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236E19BE2A618451000A0B3B /* Assets.xcassets */; };
 		236E19C22A618451000A0B3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236E19C12A618451000A0B3B /* Preview Assets.xcassets */; };
@@ -20,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		233F57592A6492A40077EED0 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		233F575B2A6493CA0077EED0 /* OpenAIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIModel.swift; sourceTree = "<group>"; };
 		236E19B72A618450000A0B3B /* tudcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tudcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		236E19BA2A618450000A0B3B /* tudcardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tudcardsApp.swift; sourceTree = "<group>"; };
 		236E19BE2A618451000A0B3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +46,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				233F57642A6556000077EED0 /* GPT in Frameworks */,
+				233F57622A6556000077EED0 /* ChatGPT in Frameworks */,
+				233F57662A6556000077EED0 /* OpenAI in Frameworks */,
+				233F575F2A6553360077EED0 /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				236E19C82A6184C6000A0B3B /* FlashcardModel.swift */,
+				233F575B2A6493CA0077EED0 /* OpenAIModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,6 +118,7 @@
 				236E19D42A618C8C000A0B3B /* FlashcardListView.swift */,
 				236E19D62A618E51000A0B3B /* FlashcardDetailView.swift */,
 				236E19D82A618F55000A0B3B /* OverlayView.swift */,
+				233F57592A6492A40077EED0 /* ChatView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,6 +147,12 @@
 			dependencies = (
 			);
 			name = tudcards;
+			packageProductDependencies = (
+				233F575E2A6553360077EED0 /* OpenAISwift */,
+				233F57612A6556000077EED0 /* ChatGPT */,
+				233F57632A6556000077EED0 /* GPT */,
+				233F57652A6556000077EED0 /* OpenAI */,
+			);
 			productName = tudcards;
 			productReference = 236E19B72A618450000A0B3B /* tudcards.app */;
 			productType = "com.apple.product-type.application";
@@ -161,6 +181,10 @@
 				Base,
 			);
 			mainGroup = 236E19AE2A618450000A0B3B;
+			packageReferences = (
+				233F575D2A6553360077EED0 /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				233F57602A6556000077EED0 /* XCRemoteSwiftPackageReference "GPTSwift" */,
+			);
 			productRefGroup = 236E19B82A618450000A0B3B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -190,7 +214,9 @@
 				236E19D92A618F55000A0B3B /* OverlayView.swift in Sources */,
 				236E19D52A618C8C000A0B3B /* FlashcardListView.swift in Sources */,
 				236E19D32A618B31000A0B3B /* CategoryListView.swift in Sources */,
+				233F575C2A6493CA0077EED0 /* OpenAIModel.swift in Sources */,
 				236E19D72A618E51000A0B3B /* FlashcardDetailView.swift in Sources */,
+				233F575A2A6492A40077EED0 /* ChatView.swift in Sources */,
 				236E19CD2A618646000A0B3B /* FlashcardViewModel.swift in Sources */,
 				236E19CB2A618553000A0B3B /* CategoryViewModel.swift in Sources */,
 				236E19C92A6184C6000A0B3B /* FlashcardModel.swift in Sources */,
@@ -395,6 +421,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		233F575D2A6553360077EED0 /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		233F57602A6556000077EED0 /* XCRemoteSwiftPackageReference "GPTSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftedMind/GPTSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		233F575E2A6553360077EED0 /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 233F575D2A6553360077EED0 /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+		233F57612A6556000077EED0 /* ChatGPT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 233F57602A6556000077EED0 /* XCRemoteSwiftPackageReference "GPTSwift" */;
+			productName = ChatGPT;
+		};
+		233F57632A6556000077EED0 /* GPT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 233F57602A6556000077EED0 /* XCRemoteSwiftPackageReference "GPTSwift" */;
+			productName = GPT;
+		};
+		233F57652A6556000077EED0 /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 233F57602A6556000077EED0 /* XCRemoteSwiftPackageReference "GPTSwift" */;
+			productName = OpenAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 236E19AF2A618450000A0B3B /* Project object */;
 }

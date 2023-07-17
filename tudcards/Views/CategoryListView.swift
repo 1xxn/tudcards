@@ -10,6 +10,7 @@ import SwiftUI
 struct CategoryListView: View {
     @EnvironmentObject var categoryViewModel: CategoryViewModel
     @State private var isPresentingCategorySheet = false
+    @State private var isPresentingChatView = false
     @State private var newCategoryTitle = ""
     
     var body: some View {
@@ -36,9 +37,20 @@ struct CategoryListView: View {
                             .foregroundColor(.green)
                     }
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        isPresentingChatView.toggle()
+                    }) {
+                        Image(systemName: "message")
+                            .foregroundColor(.blue)
+                    }
+                }
             }
             .sheet(isPresented: $isPresentingCategorySheet) {
                 CategorySheet(categoryViewModel: categoryViewModel, isPresented: $isPresentingCategorySheet)
+            }
+            .sheet(isPresented: $isPresentingChatView) {
+                ChatView(categoryViewModel: categoryViewModel)
             }
         }
     }
