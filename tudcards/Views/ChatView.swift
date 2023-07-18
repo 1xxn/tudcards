@@ -7,9 +7,13 @@
 
 import Foundation
 import SwiftUI
+import PDFKit
+import MobileCoreServices
+
 
 struct ChatView: View {
     @State private var message = ""
+    @State private var pdfText = ""
     @State private var numFlashcards = ""
     @State private var selectedCategory: Category?
     @State private var isLoading = false
@@ -17,6 +21,8 @@ struct ChatView: View {
     @State private var showingPicker = false
     @ObservedObject var categoryViewModel: CategoryViewModel
     @Environment(\.presentationMode) var presentationMode
+    @State private var isDocumentPickerShown = false
+
 
     var body: some View {
         NavigationView {
@@ -40,6 +46,23 @@ struct ChatView: View {
                         }
                     })
                 }
+                Button(action: {
+                                    isDocumentPickerShown = true
+                                }) {
+                                    Text("Upload PDF")
+                                        .padding()
+                                        .background(Color.blue)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(10)
+                                }
+                                .sheet(isPresented: $isDocumentPickerShown) {
+                                    DocumentPicker { url in
+                                        let pdfDocument = PDFDocument(url: url)
+                                        pdfText = pdfDocument?.string ?? ""
+                                        message = pdfText
+                                        generateFlashcards()
+                                    }
+                                }
 
                 ScrollView {
                     VStack(spacing: 15) {
@@ -155,6 +178,36 @@ struct ActivityView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIActivityIndicatorView, context: Context) { }
+}
+
+struct DocumentPicker: UIViewControllerRepresentable {
+    var didPickDocument: (URL) -> Void
+
+    class Coordinator: NSObject, UIDocumentPickerDelegate {
+        var parent: DocumentPicker
+
+        init(_ parent: DocumentPicker) {
+            self.parent = parent
+        }
+
+        func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+            parent.didPickDocument(urls[0])
+        }
+
+        func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) { }
+    }
+
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(self)
+    }
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<DocumentPicker>) -> UIDocumentPickerViewController {
+        let picker = UIDocumentPickerViewController(documentTypes: [kUTTypePDF as String], in: .import)
+        picker.delegate = context.coordinator
+        return picker
+    }
+
+    func updateUIViewController(_ uiViewController: UIDocumentPickerViewController, context: UIViewControllerRepresentableContext<DocumentPicker>) { }
 }
 
 #if canImport(UIKit)
