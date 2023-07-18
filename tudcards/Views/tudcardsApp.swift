@@ -11,6 +11,7 @@ import SwiftUI
 struct tudcardsApp: App {
     @StateObject private var categoryViewModel = CategoryViewModel()
     
+    // root scene of app
     var body: some Scene {
         WindowGroup {
             CategoryListView()

@@ -20,4 +20,6 @@ struct Flashcard: Identifiable, Codable, Hashable {
     let id: UUID
     var question: String
     var answer: String
+    var correct: Bool?
 }
+

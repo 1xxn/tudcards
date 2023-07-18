@@ -12,13 +12,15 @@ struct FlashcardDetailView: View {
     @Namespace private var cardNamespace
     var flashcard: Flashcard
     @Environment(\.presentationMode) var presentationMode
+    var isLoopEnabled: Bool
+    @EnvironmentObject var categoryViewModel: CategoryViewModel
+
 
     var body: some View {
         VStack {
             CardView(isShowingAnswer: $isShowingAnswer) {
                 if isShowingAnswer {
                     Text(isShowingAnswer ? flashcard.answer : flashcard.question)
-                        .font(.largeTitle)
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
                         .padding()
@@ -47,11 +49,35 @@ struct FlashcardDetailView: View {
                     .foregroundColor(.white)
                     .cornerRadius(8)
             }
+            
+            HStack {
+                Button(action: {
+                    categoryViewModel.markFlashcard(flashcard, as: true)
+                }) {
+                    Text("Correct")
+                        .font(.headline)
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+                
+                Button(action: {
+                    categoryViewModel.markFlashcard(flashcard, as: false)
+                }) {
+                    Text("Incorrect")
+                        .font(.headline)
+                        .padding()
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+            }
         }
         .navigationTitle("Flashcard")
         .padding()
-
     }
+    
 }
 
 struct CardView<Content: View>: View {

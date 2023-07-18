@@ -74,4 +74,14 @@ class CategoryViewModel: ObservableObject {
             print("Error loading data: \(error)")
         }
     }
+    
+    // function to mark flashcards
+    func markFlashcard(_ flashcard: Flashcard, as correct: Bool) {
+        for (i, category) in categories.enumerated() {
+            if let index = category.flashcards.firstIndex(where: { $0.id == flashcard.id }) {
+                categories[i].flashcards[index].correct = correct
+            }
+        }
+        saveData()
+    }
 }
