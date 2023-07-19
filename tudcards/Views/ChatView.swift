@@ -21,59 +21,68 @@ struct ChatView: View {
     @State private var showingPicker = false
     @ObservedObject var categoryViewModel: CategoryViewModel
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
     @State private var isDocumentPickerShown = false
 
-
     var body: some View {
-        NavigationView {
-            VStack {
-                Button(action: {
-                    showingPicker = true
-                }) {
+            NavigationView {
+                VStack {
                     HStack {
-                        Text(selectedCategory?.title ?? "Category")
-                        Spacer()
-                        Image(systemName: "chevron.down")
-                    }
-                    .padding()
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
-                }
-                .actionSheet(isPresented: $showingPicker) {
-                    ActionSheet(title: Text("Select a Category"), buttons: categoryViewModel.categories.map { category in
-                        .default(Text(category.title)) {
-                            selectedCategory = category
+                        Button(action: {
+                            showingPicker = true
+                        }) {
+                            HStack {
+                                Text(selectedCategory?.title ?? "Category")
+                                    .foregroundColor(.primary)
+                                Spacer()
+                                Image(systemName: "chevron.down")
+                                    .foregroundColor(.primary)
+                            }
+                            .padding()
+                            .background(colorScheme == .dark ? Color(.systemGray4) : Color(.systemGray6))
+                            .cornerRadius(10)
                         }
-                    })
-                }
-                Button(action: {
-                                    isDocumentPickerShown = true
-                                }) {
-                                    Text("Upload PDF")
-                                        .padding()
-                                        .background(Color.blue)
-                                        .foregroundColor(.white)
-                                        .cornerRadius(10)
+                        .actionSheet(isPresented: $showingPicker) {
+                            ActionSheet(title: Text("Select a Category"), buttons: categoryViewModel.categories.map { category in
+                                .default(Text(category.title)) {
+                                    selectedCategory = category
                                 }
-                                .sheet(isPresented: $isDocumentPickerShown) {
-                                    DocumentPicker { url in
-                                        let pdfDocument = PDFDocument(url: url)
-                                        pdfText = pdfDocument?.string ?? ""
-                                        message = pdfText
-                                        generateFlashcards()
-                                    }
-                                }
+                            } + [.cancel()])
+                        }
+                        .padding([.leading, .trailing])
+
+                        Button(action: {
+                            isDocumentPickerShown = true
+                        }) {
+                            Text("Upload PDF")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
+                        .sheet(isPresented: $isDocumentPickerShown) {
+                            DocumentPicker { url in
+                                let pdfDocument = PDFDocument(url: url)
+                                pdfText = pdfDocument?.string ?? ""
+                                message = pdfText
+                                generateFlashcards()
+                            }
+                        }
+                        .padding([.leading, .trailing])
+                    }
 
                 ScrollView {
-                    VStack(spacing: 15) {
+                    LazyVStack(spacing: 15) {
                         ForEach(messages, id: \.self) { message in
                             ChatBubble(message: message)
+                                .transition(.move(edge: .trailing))
+                                .animation(.spring())
                         }
                     }
                     .padding()
                 }
-                
-                MessageInputView(message: $message, numFlashcards: $numFlashcards, isLoading: $isLoading, action: generateFlashcards)
+
+                    MessageInputView(message: $message, numFlashcards: $numFlashcards, isLoading: $isLoading, isSendButtonDisabled: selectedCategory == nil || message.isEmpty, action: generateFlashcards)
                     .padding()
             }
             .navigationBarTitle("Generate with GPT", displayMode: .inline)
@@ -130,31 +139,29 @@ struct ChatBubbleShape: Shape {
 }
 
 struct MessageInputView: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var message: String
     @Binding var numFlashcards: String
     @Binding var isLoading: Bool
+    var isSendButtonDisabled: Bool
     var action: () -> Void
 
     var body: some View {
-        HStack(alignment: .center) {
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(.systemGray6)) // Light gray background
-                TextEditor(text: $message)
-                    .padding(10)
-            }
-            .frame(height: 100) // Increased height for better visibility
+        HStack(alignment: .center, spacing: 10) {
+            TextField("Message", text: $message)
+                .padding(10)
+                .foregroundColor(.primary)
+                .background(colorScheme == .dark ? Color(.systemGray4) : Color(.systemGray6))
+                .cornerRadius(10)
+                .frame(minHeight: 100)
 
-            VStack {
-                Text("Flashcards")
-                    .font(.caption)
-                TextField("", text: $numFlashcards)
-                    .keyboardType(.numberPad)
-                    .frame(width: 30, height: 30)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(5)
-            }
-            .padding(.leading)
+            TextField("Flashcards", text: $numFlashcards)
+                .keyboardType(.numberPad)
+                .frame(width: 30, height: 30)
+                .background(colorScheme == .dark ? Color(.systemGray4) : Color(.systemGray6))
+                .foregroundColor(.primary)
+                .cornerRadius(5)
+                .padding(.leading)
 
             if isLoading {
                 ActivityView()
@@ -164,6 +171,7 @@ struct MessageInputView: View {
                         .font(.title2)
                         .foregroundColor(.blue)
                 }
+                .disabled(isSendButtonDisabled)
             }
         }
         .padding()

@@ -73,6 +73,7 @@ struct CategoryListView: View {
 
     struct CategorySheet: View {
         @ObservedObject var categoryViewModel: CategoryViewModel
+        @Environment(\.colorScheme) var colorScheme
         @Binding var isPresented: Bool
         @State private var newCategoryTitle = ""
         @State private var module = ""
@@ -80,22 +81,29 @@ struct CategoryListView: View {
         var body: some View {
             NavigationView {
                 VStack {
-                    TextField("Category Title", text: $newCategoryTitle)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
+                    TextField("New Category Title", text: $newCategoryTitle)
+                        .padding(10)
+                        .foregroundColor(.primary)
+                        .background(colorScheme == .dark ? Color(.systemGray4) : Color(.systemGray6))
+                        .cornerRadius(10)
+                        .frame(minHeight: 75)
+                        .padding(.horizontal)
+
 
                     Button(action: {
                         categoryViewModel.createCategory(title: newCategoryTitle, module: module)
                         isPresented = false
                     }) {
                         Text("Create")
+                            .font(.headline)
                             .foregroundColor(.white)
                             .padding()
+                            .frame(maxWidth: .infinity)
                             .background(Color.blue)
-                            .cornerRadius(8)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
                             .disabled(newCategoryTitle.isEmpty)
                     }
-                    .padding()
                 }
                 .navigationTitle("New Category")
                 .navigationBarTitleDisplayMode(.inline)
@@ -105,13 +113,14 @@ struct CategoryListView: View {
                             isPresented = false
                         }) {
                             Image(systemName: "xmark")
-                                    .foregroundColor(.red)
+                                .foregroundColor(.red)
                         }
                     }
                 }
             }
         }
     }
+
 
     struct CategoryPreview: PreviewProvider {
         static var previews: some View {

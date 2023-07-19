@@ -13,8 +13,8 @@
 		233F57622A6556000077EED0 /* ChatGPT in Frameworks */ = {isa = PBXBuildFile; productRef = 233F57612A6556000077EED0 /* ChatGPT */; };
 		233F57642A6556000077EED0 /* GPT in Frameworks */ = {isa = PBXBuildFile; productRef = 233F57632A6556000077EED0 /* GPT */; };
 		233F57662A6556000077EED0 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 233F57652A6556000077EED0 /* OpenAI */; };
+		234CC8F42A6834960056BF6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 234CC8F32A6834960056BF6F /* Assets.xcassets */; };
 		236E19BB2A618450000A0B3B /* tudcardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19BA2A618450000A0B3B /* tudcardsApp.swift */; };
-		236E19BF2A618451000A0B3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236E19BE2A618451000A0B3B /* Assets.xcassets */; };
 		236E19C22A618451000A0B3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236E19C12A618451000A0B3B /* Preview Assets.xcassets */; };
 		236E19C92A6184C6000A0B3B /* FlashcardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19C82A6184C6000A0B3B /* FlashcardModel.swift */; };
 		236E19CB2A618553000A0B3B /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19CA2A618553000A0B3B /* CategoryViewModel.swift */; };
@@ -29,9 +29,9 @@
 /* Begin PBXFileReference section */
 		233F57592A6492A40077EED0 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		233F575B2A6493CA0077EED0 /* OpenAIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIModel.swift; sourceTree = "<group>"; };
+		234CC8F32A6834960056BF6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		236E19B72A618450000A0B3B /* tudcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tudcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		236E19BA2A618450000A0B3B /* tudcardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tudcardsApp.swift; sourceTree = "<group>"; };
-		236E19BE2A618451000A0B3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		236E19C12A618451000A0B3B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		236E19C82A6184C6000A0B3B /* FlashcardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardModel.swift; sourceTree = "<group>"; };
 		236E19CA2A618553000A0B3B /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		236E19D12A618873000A0B3B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				236E19BE2A618451000A0B3B /* Assets.xcassets */,
+				234CC8F32A6834960056BF6F /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -203,8 +203,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				23B606E22A66A6D1002683BF /* README.md in Resources */,
+				234CC8F42A6834960056BF6F /* Assets.xcassets in Resources */,
 				236E19C22A618451000A0B3B /* Preview Assets.xcassets in Resources */,
-				236E19BF2A618451000A0B3B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
